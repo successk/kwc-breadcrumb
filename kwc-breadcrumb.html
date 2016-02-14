@@ -1,0 +1,192 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<!--
+  Custom styles:
+    * Vertical breadcrumb only:
+      * --k-breadcrumb-title-styles (default {})
+      * --k-breadcrumb-vertical-link-styles (default {} including color: #000; background-color: #fff;)
+      * --k-breadcrumb-vertical-link-hover-styles (default {} including color: #fff; background-color: #000;)
+      * --k-breadcrumb-vertical-last-link-styles (default {} including font-weight: bold;)
+      * --k-breadcrumb-vertical-last-link-hover-styles (default {})
+    * Horizontal breadcrumb only:
+      * --k-breadcrumb-box (default {}, including border: 1px solid #aaa; box-shadow: 0 0 1px #aaa;)
+      * --k-breadcrumb-separator (default "‣")
+      * --k-breadcrumb-horizontal-link-styles (default {} including color: #000; text-decoration: none;)
+      * --k-breadcrumb-horizontal-link-hover-styles (default {} including text-decoration: underline;)
+      * --k-breadcrumb-horizontal-last-link-styles (default {} including font-weight: bold;)
+      * --k-breadcrumb-horizontal-last-link-hover-styles (default {})
+    * Both:
+      * --k-breadcrumb-link-styles (default {}, see --k-breadcrumb-vertical-link-styles, --k-breadcrumb-horizontal-link-styles)
+      * --k-breadcrumb-link-hover-styles (default {}, see --k-breadcrumb-vertical-link-hover-styles, --k-breadcrumb-horizontal-link-hover-styles)
+      * --k-breadcrumb-last-link-styles (default {}, see --k-breadcrumb-vertical-last-link-styles, --k-breadcrumb-horizontal-last-link-styles)
+      * --k-breadcrumb-last-link-hover-styles (default {}, see --k-breadcrumb-vertical-last-link-hover-styles, --k-breadcrumb-horizontal-last-link-hover-styles)
+  
+  Properties:
+    * header: Title of the breadcrumb (default "")
+    * type: Type of breadcrumb ("vertical" or "horizontal", default "horizontal")
+-->
+<dom-module id="kwc-breadcrumb">
+  <template>
+    <style>
+      h3 {
+        @apply(--k-breadcrumb-title-styles);
+      }
+      /* Vertical version */
+      
+      .container.vertical >::content ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .container.vertical >::content li:nth-child(1) a {
+        padding-left: 5px;
+      }
+      
+      .container.vertical >::content li:nth-child(2) a {
+        padding-left: 10px;
+      }
+      
+      .container.vertical >::content li:nth-child(3) a {
+        padding-left: 15px;
+      }
+      
+      .container.vertical >::content li:nth-child(4) a {
+        padding-left: 20px;
+      }
+      
+      .container.vertical >::content li:nth-child(5) a {
+        padding-left: 25px;
+      }
+      
+      .container.vertical >::content li:nth-child(6) a {
+        padding-left: 30px;
+      }
+      
+      .container.vertical >::content li:nth-child(7) a {
+        padding-left: 35px;
+      }
+      
+      .container.vertical >::content li:nth-child(8) a {
+        padding-left: 40px;
+      }
+      
+      .container.vertical >::content li:nth-child(9) a {
+        padding-left: 45px;
+      }
+      
+      .container.vertical >::content li:nth-child(10) a {
+        padding-left: 50px;
+      }
+      
+      .container.vertical >::content a {
+        text-decoration: none;
+        color: #000;
+        background-color: #fff;
+        display: block;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+        @apply(--k-breadcrumb-vertical-link-styles) @apply(--k-breadcrumb-link-styles)
+      }
+      
+      .container.vertical >::content a:hover {
+        color: #fff;
+        background-color: #000;
+        @apply(--k-breadcrumb-vertical-link-hover-styles) @apply(--k-breadcrumb-link-styles)
+      }
+      
+      .container.vertical >::content li:last-of-type a {
+        font-weight: bold;
+        @apply(--k-breadcrumb-vertical-last-link-styles) @apply(--k-breadcrumb-last-link-styles)
+      }
+      
+      .container.vertical >::content li:last-of-type a:hover {
+        @apply(--k-breadcrumb-vertical-last-link-hover-styles) @apply(--k-breadcrumb-last-link-hover-styles)
+      }
+      /* Horizontal version */
+      
+      .container.horizontal {
+        border: 1px solid #aaa;
+        box-shadow: 0 0 1px #aaa;
+        padding: 0.5rem;
+        @apply(--k-breadcrumb-box)
+      }
+      
+      .container.horizontal >::content ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .container.horizontal >::content ul::after {
+        content: " ";
+        display: table;
+        clear: both;
+      }
+      
+      .container.horizontal >::content li {
+        display: inline-block;
+      }
+      
+      .container.horizontal >::content li:not(:first-of-type)::before {
+        content: var(--k-breadcrumb-separator, "‣");
+        padding: 0 0.5rem;
+      }
+      
+      .container.horizontal >::content a {
+        color: #000;
+        text-decoration: none;
+        @apply(--k-breadcrumb-horizontal-link-styles);
+        @apply(--k-breadcrumb-link-styles);
+      }
+      
+      .container.horizontal >::content a:hover {
+        text-decoration: underline;
+        @apply(--k-breadcrumb-horizontal-link-hover-styles);
+        @apply(--k-breadcrumb-link-hover-styles);
+      }
+      
+      .container.horizontal >::content li:last-of-type a {
+        font-weight: bold;
+        @apply(--k-breadcrumb-horizontal-last-link-styles);
+        @apply(--k-breadcrumb-last-link-styles);
+      }
+      
+      .container.horizontal >::content li:last-of-type a:hover {
+        font-weight: bold;
+        @apply(--k-breadcrumb-horizontal-last-link-hover-styles);
+        @apply(--k-breadcrumb-last-link-hover-styles);
+      }
+    </style>
+
+    <h3 hidden$="[[!header]]">[[header]]</h3>
+    <div class$="[[_containerClass]]">
+      <content></content>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: "kwc-breadcrumb",
+
+      properties: {
+        header: {
+          type: String,
+          value: null
+        },
+        type: {
+          type: String,
+          value: "horizontal"
+        },
+        _containerClass: {
+          type: String,
+          computed: "_computeContainerClass(type)"
+        }
+      },
+      
+      _computeContainerClass: function(type) {
+        return "container " + (type === "vertical" ? "vertical" : "horizontal")
+      }
+    })
+  </script>
+</dom-module>

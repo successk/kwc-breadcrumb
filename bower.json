@@ -1,0 +1,27 @@
+{
+  "name": "kwc-breadcrumb",
+  "homepage": "https://github.com/successk/kwc-breadcrumb",
+  "authors": [
+    "Gaëtan Rizio <gaetan@rizio.fr>"
+  ],
+  "description": "Shows a breadcrumb",
+  "version": "0.1.0",
+  "main": "kwc-breadcrumb.html",
+  "moduleType": [],
+  "keywords": [
+    "polymer",
+    "web-components",
+    "breadcrumb"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0"
+  }
+}

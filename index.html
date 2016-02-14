@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>&lt;my-repo&gt;</title>
+
+  <script src="../webcomponentsjs/webcomponents-lite.min.js"></script>
+
+  <link rel="import" href="kwc-breadcrumb.html">
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: Roboto, sans-serif;
+    }
+    
+    #content {
+      width: 1200px;
+      height: 100vh;
+      margin: auto;
+      display: flex;
+    }
+    
+    #content > div {
+      flex-grow: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="content">
+    <div>
+      <kwc-breadcrumb type="vertical" header="Breadcrumb">
+        <ul>
+          <li><a href="#">Root</a></li>
+          <li><a href="#">Parent</a></li>
+          <li><a href="#">Child</a></li>
+          <li><a href="#">Final</a></li>
+        </ul>
+      </kwc-breadcrumb>
+    </div>
+    <div>
+      <kwc-breadcrumb>
+        <ul>
+          <li><a href="#">Root</a></li>
+          <li><a href="#">Parent</a></li>
+          <li><a href="#">Child</a></li>
+          <li><a href="#">Final</a></li>
+        </ul>
+      </kwc-breadcrumb>
+    </div>
+  </div>
+</body>
+
+</html>
