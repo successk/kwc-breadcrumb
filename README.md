@@ -63,26 +63,20 @@ none      | -        | -
 
 ## Styles
 
-* Both:
-* --k-breadcrumb-link-styles (default {}, see --k-breadcrumb-vertical-link-styles, --k-breadcrumb-horizontal-link-styles)
-* --k-breadcrumb-link-hover-styles (default {}, see --k-breadcrumb-vertical-link-hover-styles, --k-breadcrumb-horizontal-link-hover-styles)
-* --k-breadcrumb-last-link-styles (default {}, see --k-breadcrumb-vertical-last-link-styles, --k-breadcrumb-horizontal-last-link-styles)
-* --k-breadcrumb-last-link-hover-styles (default {}, see --k-breadcrumb-vertical-last-link-hover-styles, --k-breadcrumb-horizontal-last-link-hover-styles)
-
-## Vertical breadcrumb only
+### Vertical breadcrumb only
 
 Name                                             | Default        | Description
----                                              | ---            | --
+---                                              | ---            | ---
 `--k-breadcrumb-title-styles`                    | `{}`           | Styles of the title (if defined)
 `--k-breadcrumb-vertical-link-styles`            | `{}`           | Styles of links
 `--k-breadcrumb-vertical-link-hover-styles`      | `{}`           | Styles of link when hover
 `--k-breadcrumb-vertical-last-link-styles`       | `{}`           | Styles of last link
 `--k-breadcrumb-vertical-last-link-hover-styles` | `{}`           | Styles of last link when hover
 
-## Horizontal breadcrumb only
+### Horizontal breadcrumb only
 
 Name                                               | Default        | Description
----                                                | ---            | --
+---                                                | ---            | ---
 `--k-breadcrumb-box`                               | `{}`           | Styles of the breadcrumb container
 `--k-breadcrumb-separator`                         | `‣`            | Separator of breadcrumb elements
 `--k-breadcrumb-horizontal-link-styles`            | `{}`           | Styles of links
@@ -90,10 +84,10 @@ Name                                               | Default        | Descriptio
 `--k-breadcrumb-horizontal-last-link-styles`       | `{}`           | Styles of last link
 `--k-breadcrumb-horizontal-last-link-hover-styles` | `{}`           | Styles of last link when hover
 
-## Both breadcrumb
+### Both breadcrumb
 
 Name                                    | Default        | Description
----                                     | ---            | --
+---                                     | ---            | ---
 `--k-breadcrumb-link-styles`            | `{}`           | Styles of links (can be used with vertical-only and horizontal-only versions)
 `--k-breadcrumb-link-hover-styles`      | `{}`           | Styles of link when hover (can be used with vertical-only and horizontal-only versions)
 `--k-breadcrumb-last-link-styles`       | `{}`           | Styles of last link (can be used with vertical-only and horizontal-only versions)
